@@ -1,0 +1,42 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001d266a25030 .scope module, "not_tb" "not_tb" 2 4;
+ .timescale -9 -9;
+v000001d266bda170_0 .var "a", 0 0;
+v000001d266a25350_0 .net "b", 0 0, L_000001d2669f3070;  1 drivers
+S_000001d266a251c0 .scope module, "uut" "name" 2 9, 3 1 0, S_000001d266a25030;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "b";
+L_000001d2669f3070 .functor NOT 1, v000001d266bda170_0, C4<0>, C4<0>, C4<0>;
+v000001d2669f31d0_0 .net "a", 0 0, v000001d266bda170_0;  1 drivers
+v000001d2669f2cc0_0 .net "b", 0 0, L_000001d2669f3070;  alias, 1 drivers
+    .scope S_000001d266a25030;
+T_0 ;
+    %vpi_call 2 12 "$dumpfile", "not.vcd" {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001d266a25030 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001d266bda170_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001d266bda170_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001d266bda170_0, 0, 1;
+    %delay 20, 0;
+    %vpi_call 2 24 "$display", "Test complete" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "not_tb.v";
+    "./not.v";
