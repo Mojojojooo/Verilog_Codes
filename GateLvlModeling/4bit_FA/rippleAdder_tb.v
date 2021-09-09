@@ -23,7 +23,7 @@ initial begin
     #10 a=4'd9; b=4'd9;
     #10 a=4'd10; b=4'd15;
 
-    //Carry In = 1
+    //Carry In = 0
     #5 cin = 0;
     #10 a=4'd3; b=4'd4;
     #10 a=4'd2; b=4'd5;
