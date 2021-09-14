@@ -1,5 +1,5 @@
 $date
-	Tue Sep 14 17:03:15 2021
+	Tue Sep 14 17:35:12 2021
 $end
 $version
 	Icarus Verilog
@@ -15,17 +15,15 @@ $scope module uut $end
 $var wire 1 " a $end
 $var wire 1 # b $end
 $var reg 1 ! max $end
-$scope task bitwise_op $end
+$scope function maxValue $end
 $var reg 1 $ A $end
 $var reg 1 % B $end
-$var reg 1 & max $end
 $upscope $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-0&
 0%
 0$
 0#
@@ -34,12 +32,11 @@ $dumpvars
 $end
 #10
 1!
-1&
 1%
 1#
 #20
-0%
 1$
+0%
 0#
 1"
 #30

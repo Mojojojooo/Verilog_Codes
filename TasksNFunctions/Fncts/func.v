@@ -8,15 +8,24 @@ output max;
 reg max;
 
 always @(a or b) begin
-    bitwise_op(max,a,b);
+    max = maxValue(a,b);
 end
 
-task bitwise_op;
-    output max;
+function maxValue;
+    // output max;
     input A,B;
     begin
-        max = (A > B)? A : B;
+        maxValue = (A > B)? A : B;
     end
-endtask
+endfunction
+
+    
+// task max;
+//     output max;
+//     input A,B;
+//     begin
+//         max = (A > B)? A : B;
+//     end
+// endtask
 
 endmodule
