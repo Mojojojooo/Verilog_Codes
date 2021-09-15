@@ -1,0 +1,66 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000253ba312ca0 .scope module, "nor_tb" "nor_tb" 2 4;
+ .timescale -12 -12;
+v00000253ba2fb690_0 .var "a", 0 0;
+v00000253ba2fb730_0 .var "b", 0 0;
+RS_00000253ba347098 .resolv tri, L_00000253ba389e40, L_00000253ba389b30, L_00000253ba389c10;
+v00000253ba2fb7d0_0 .net8 "out", 0 0, RS_00000253ba347098;  3 drivers, strength-aware
+S_00000253ba312e30 .scope module, "uut" "switchNor" 2 9, 3 1 0, S_00000253ba312ca0;
+ .timescale -12 -12;
+    .port_info 0 /OUTPUT 1 "out";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_00000253ba313100 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_00000253ba389e40 .functor NMOS 1, L_00000253ba313100, v00000253ba2fb690_0, C4<0>, C4<0>;
+L_00000253ba389b30 .functor NMOS 1, L_00000253ba313100, v00000253ba2fb730_0, C4<0>, C4<0>;
+L_00000253ba389ac0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_00000253ba389f90 .functor PMOS 1, L_00000253ba389ac0, v00000253ba2fb690_0, C4<0>, C4<0>;
+L_00000253ba389c10 .functor PMOS 1, L_00000253ba389f90, v00000253ba2fb730_0, C4<0>, C4<0>;
+v00000253ba2fa9f0_0 .net "a", 0 0, v00000253ba2fb690_0;  1 drivers
+v00000253ba346960_0 .net "b", 0 0, v00000253ba2fb730_0;  1 drivers
+v00000253ba312fc0_0 .net8 "c", 0 0, L_00000253ba389f90;  1 drivers, strength-aware
+v00000253ba313060_0 .net8 "gnd", 0 0, L_00000253ba313100;  1 drivers, strength-aware
+v00000253ba2fb550_0 .net8 "out", 0 0, RS_00000253ba347098;  alias, 3 drivers, strength-aware
+v00000253ba2fb5f0_0 .net8 "vcc", 0 0, L_00000253ba389ac0;  1 drivers, strength-aware
+    .scope S_00000253ba312ca0;
+T_0 ;
+    %vpi_call 2 12 "$dumpfile", "nor.vcd" {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000253ba312ca0 {0 0 0};
+    %vpi_call 2 14 "$monitor", $time, "\011Out=%b\011A=%b\011B=%b", v00000253ba2fb7d0_0, v00000253ba2fb690_0, v00000253ba2fb730_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000253ba2fb690_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000253ba2fb730_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000253ba2fb690_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000253ba2fb730_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000253ba2fb690_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000253ba2fb730_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000253ba2fb690_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000253ba2fb730_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call 2 20 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    ".\nor_tb.v";
+    "./nor.v";
