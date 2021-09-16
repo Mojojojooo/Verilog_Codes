@@ -1,0 +1,58 @@
+$date
+	Thu Sep 16 12:37:53 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module mux2x1_tb $end
+$var wire 1 ! out $end
+$var reg 1 " i0 $end
+$var reg 1 # i1 $end
+$var reg 1 $ s $end
+$scope module uut $end
+$var wire 1 % gnd $end
+$var wire 1 " i0 $end
+$var wire 1 # i1 $end
+$var wire 1 ! out $end
+$var wire 1 $ s $end
+$var wire 1 & sbar $end
+$var wire 1 ' vcc $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1'
+1&
+0%
+0$
+1#
+1"
+1!
+$end
+#10
+0&
+1$
+#20
+1&
+0!
+0$
+0"
+#30
+0&
+1!
+1$
+#40
+1&
+0$
+1!
+0#
+1"
+#50
+0&
+0!
+1$
+#60
